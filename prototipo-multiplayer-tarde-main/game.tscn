@@ -1,0 +1,253 @@
+[gd_scene load_steps=19 format=3 uid="uid://bsx6uhgicogwj"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_t073f"]
+[ext_resource type="PackedScene" uid="uid://ipb0od4ne7au" path="res://player.tscn" id="2_siryi"]
+[ext_resource type="Texture2D" path="res://Fantasmaamarelo2.png" id="3_cq6xq"]
+[ext_resource type="Texture2D" path="res://SpritesJogoFantasma/fastamas_com_sprit/Fantasmaaverdee2.png" id="4_3fgwo"]
+[ext_resource type="Texture2D" path="res://SpritesJogoFantasma/Fantasmaazul.png" id="5_ejnba"]
+[ext_resource type="Texture2D" path="res://SpritesJogoFantasma/fastamas_com_sprit/Fantasmavermelho2.png" id="6_oste7"]
+[ext_resource type="Texture2D" path="res://SpritesJogoFantasma/fastamas_com_sprit/Fantasmaciano2.png" id="7_yfi0i"]
+[ext_resource type="Texture2D" path="res://SpritesJogoFantasma/fastamas_com_sprit/Fantasmabege2.png" id="8_utlwm"]
+[ext_resource type="Texture2D" path="res://SpritesJogoFantasma/fastamas_com_sprit/Fantasmalaranja2.png" id="9_4ymrt"]
+[ext_resource type="Texture2D" uid="uid://chnslp3447y1p" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmapurpura2.png" id="10_bfepe"]
+[ext_resource type="Texture2D" uid="uid://bpok3ftkeb2q4" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmarosio2 - cópia.png" id="11_8hd5q"]
+[ext_resource type="Texture2D" uid="uid://bpgp73iecha2j" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxo2.png" id="12_7gal3"]
+[ext_resource type="Texture2D" uid="uid://c20x2bi1qcru6" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxoclaro2.png" id="13_xykf7"]
+[ext_resource type="Texture2D" uid="uid://cykbwck4i5bii" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaverdemato2.png" id="14_v5qnf"]
+[ext_resource type="Texture2D" uid="uid://dta6b0vad8t7w" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmavermelhoescuro2.png" id="15_163rj"]
+[ext_resource type="Texture2D" uid="uid://dyaaydjws72fa" path="res://SpritesJogoFantasma 2/Fantasmaazulclaro.png" id="16_avuub"]
+
+[sub_resource type="Theme" id="Theme_pwsm6"]
+Button/font_sizes/font_size = 32
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 32
+
+[sub_resource type="SystemFont" id="SystemFont_2srrs"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_t073f")
+jogador_scene = ExtResource("2_siryi")
+
+[node name="MultiplayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Panel" type="Panel" parent="MultiplayerUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -322.0
+offset_right = 573.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pwsm6")
+
+[node name="Label" type="Label" parent="MultiplayerUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0775261
+anchor_top = 0.228261
+anchor_right = 0.0775261
+anchor_bottom = 0.228261
+offset_left = -64.0
+offset_top = -132.0
+offset_right = 64.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_2srrs")
+text = "Lobby"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoJoin" type="Button" parent="MultiplayerUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0649269
+anchor_top = 0.201863
+anchor_right = 0.0649269
+anchor_bottom = 0.201863
+offset_left = -34.5361
+offset_top = -52.0
+offset_right = 56.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Join"
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoHost" type="Button" parent="MultiplayerUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0818815
+anchor_top = 0.177019
+anchor_right = 0.0818815
+anchor_bottom = 0.177019
+offset_left = -56.0
+offset_top = 36.0
+offset_right = 56.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Host"
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoNick" type="LineEdit" parent="MultiplayerUI/Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 250.0
+offset_right = 215.0
+offset_bottom = 298.0
+placeholder_text = "Digite seu Nick"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player.tscn")
+spawn_path = NodePath("..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Log" type="TextEdit" parent="CanvasLayer"]
+visible = false
+offset_top = 496.0
+offset_right = 448.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 16
+editable = false
+wrap_mode = 1
+
+[node name="skinverde" type="Button" parent="."]
+offset_left = 303.0
+offset_top = 40.0
+offset_right = 357.0
+offset_bottom = 71.0
+text = "Green"
+
+[node name="Fantasmaaverdee2" type="Sprite2D" parent="."]
+position = Vector2(337, 152)
+texture = ExtResource("4_3fgwo")
+
+[node name="skinamarela" type="Button" parent="."]
+offset_left = 387.0
+offset_top = 40.0
+offset_right = 461.0
+offset_bottom = 71.0
+text = "Yellow"
+
+[node name="Fantasmaamarelo2" type="Sprite2D" parent="."]
+position = Vector2(432, 154)
+texture = ExtResource("3_cq6xq")
+
+[node name="skinazul" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 40.0
+offset_right = 567.0
+offset_bottom = 71.0
+text = "Blue"
+
+[node name="Fantasmaazul" type="Sprite2D" parent="."]
+position = Vector2(480, 103)
+texture = ExtResource("5_ejnba")
+
+[node name="skinvermelha" type="Button" parent="."]
+offset_left = 598.0
+offset_top = 40.0
+offset_right = 672.0
+offset_bottom = 71.0
+text = "Red"
+
+[node name="Fantasmavermelho2" type="Sprite2D" parent="."]
+position = Vector2(645, 158)
+texture = ExtResource("6_oste7")
+
+[node name="skinciano" type="Button" parent="."]
+offset_left = 706.0
+offset_top = 40.0
+offset_right = 780.0
+offset_bottom = 71.0
+text = "Cyan"
+
+[node name="Fantasmaciano2" type="Sprite2D" parent="."]
+position = Vector2(751, 153)
+texture = ExtResource("7_yfi0i")
+
+[node name="skinbege" type="Button" parent="."]
+offset_left = 812.0
+offset_top = 40.0
+offset_right = 895.0
+offset_bottom = 71.0
+text = "Beige"
+
+[node name="Fantasmabege2" type="Sprite2D" parent="."]
+position = Vector2(864, 155)
+texture = ExtResource("8_utlwm")
+
+[node name="skinlaranja" type="Button" parent="."]
+offset_left = 926.0
+offset_top = 40.0
+offset_right = 1009.0
+offset_bottom = 71.0
+text = "Orange"
+
+[node name="Fantasmalaranja2" type="Sprite2D" parent="."]
+position = Vector2(972, 159)
+texture = ExtResource("9_4ymrt")
+
+[node name="Fantasmapurpura2" type="Sprite2D" parent="."]
+position = Vector2(333, 332)
+texture = ExtResource("10_bfepe")
+
+[node name="Fantasmarosio2-Cópia" type="Sprite2D" parent="."]
+position = Vector2(436, 334)
+texture = ExtResource("11_8hd5q")
+
+[node name="Fantasmaroxo2" type="Sprite2D" parent="."]
+position = Vector2(542, 336)
+texture = ExtResource("12_7gal3")
+
+[node name="Fantasmaroxoclaro2" type="Sprite2D" parent="."]
+position = Vector2(648, 337)
+texture = ExtResource("13_xykf7")
+
+[node name="Fantasmaverdemato2" type="Sprite2D" parent="."]
+position = Vector2(755, 335)
+texture = ExtResource("14_v5qnf")
+
+[node name="Fantasmavermelhoescuro2" type="Sprite2D" parent="."]
+position = Vector2(867, 335)
+texture = ExtResource("15_163rj")
+
+[node name="Fantasmaazulclaro" type="Sprite2D" parent="."]
+position = Vector2(924, 284)
+texture = ExtResource("16_avuub")
+
+[connection signal="pressed" from="MultiplayerUI/Panel/BotaoJoin" to="." method="_on_botao_join_pressed"]
+[connection signal="pressed" from="MultiplayerUI/Panel/BotaoHost" to="." method="_on_botao_host_pressed"]
+[connection signal="mouse_entered" from="skinverde" to="." method="_on_skinverde_mouse_entered"]
+[connection signal="mouse_exited" from="skinverde" to="." method="_on_skinverde_mouse_exited"]
+[connection signal="pressed" from="skinverde" to="." method="_on_skinverde_pressed"]
+[connection signal="mouse_entered" from="skinamarela" to="." method="_on_skinamarela_mouse_entered"]
+[connection signal="mouse_exited" from="skinamarela" to="." method="_on_skinamarela_mouse_exited"]
+[connection signal="pressed" from="skinamarela" to="." method="_on_skinamarela_pressed"]
+[connection signal="mouse_entered" from="skinazul" to="." method="_on_skinazul_mouse_entered"]
+[connection signal="mouse_exited" from="skinazul" to="." method="_on_skinazul_mouse_exited"]
+[connection signal="pressed" from="skinazul" to="." method="_on_skinazul_pressed"]
+[connection signal="mouse_entered" from="skinvermelha" to="." method="_on_skinamarela_5_mouse_entered"]
+[connection signal="mouse_exited" from="skinvermelha" to="." method="_on_skinamarela_5_mouse_exited"]
+[connection signal="pressed" from="skinvermelha" to="." method="_on_skinamarela_5_pressed"]
+[connection signal="mouse_entered" from="skinciano" to="." method="_on_skinciano_mouse_entered"]
+[connection signal="mouse_exited" from="skinciano" to="." method="_on_skinciano_mouse_exited"]
+[connection signal="pressed" from="skinciano" to="." method="_on_skinciano_pressed"]
+[connection signal="mouse_entered" from="skinbege" to="." method="_on_skinbege_mouse_entered"]
+[connection signal="mouse_exited" from="skinbege" to="." method="_on_skinbege_mouse_exited"]
+[connection signal="pressed" from="skinbege" to="." method="_on_skinbege_pressed"]
+[connection signal="mouse_entered" from="skinlaranja" to="." method="_on_skinlaranja_mouse_entered"]
+[connection signal="mouse_exited" from="skinlaranja" to="." method="_on_skinlaranja_mouse_exited"]
+[connection signal="pressed" from="skinlaranja" to="." method="_on_skinlaranja_pressed"]
