@@ -38,12 +38,10 @@ func _on_botao_host_pressed() -> void:
 		adicionar_jogador(multiplayer.get_unique_id(), campoNick.text)
 		ui.visible = false
 		#criar personagem
-		
 	
 	else:
 		log.text += "Erro ao criar servidor! Código do erro: "+str(resultado) +"\n"
 		
-	
 #Na função player_conectado realizar uma chamada rpc, para a função atualizar_log
 #Deve rodar o adicionar_jogador
 #Colocar um label no player para exibir o seu número de id
@@ -88,54 +86,123 @@ var player : Node = null
 func _on_skinamarela_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinamarela_mouse_entered() -> void:
-	$Fantasmaamarelo2.visible = true
+	$MultiplayerUI/Fantasmaamarelo2.visible = true
 func _on_skinamarela_mouse_exited() -> void:
-	$Fantasmaamarelo2.visible = false
+	$MultiplayerUI/Fantasmaamarelo2.visible = false
 	
 	#botão verde
 func _on_skinverde_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinverde_mouse_entered() -> void:
-	$Fantasmaaverdee2.visible = true
+	$MultiplayerUI/Fantasmaaverdee2.visible = true
 func _on_skinverde_mouse_exited() -> void:
-	$Fantasmaaverdee2.visible = false
+	$MultiplayerUI/Fantasmaaverdee2.visible = false
 
 #botão azul
 func _on_skinazul_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinazul_mouse_entered() -> void:
-	$Fantasmaazul.visible = true
+	$MultiplayerUI/Fantasmaazul.visible = true
 func _on_skinazul_mouse_exited() -> void:
-	$Fantasmaazul.visible = false
+	$MultiplayerUI/Fantasmaazul.visible = false
 
 #Botão vermelho
 func _on_skinamarela_5_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinamarela_5_mouse_entered() -> void:
-	$Fantasmavermelho2.visible = true
+	$MultiplayerUI/Fantasmavermelho2.visible = true
 func _on_skinamarela_5_mouse_exited() -> void:
-	$Fantasmavermelho2.visible = false
+	$MultiplayerUI/Fantasmavermelho2.visible = false
 
 #botão ciano
 func _on_skinciano_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinciano_mouse_entered() -> void:
-	$Fantasmaciano2.visible = true
+	$MultiplayerUI/Fantasmaciano2.visible = true
 func _on_skinciano_mouse_exited() -> void:
-	$Fantasmaciano2.visible = false
+	$MultiplayerUI/Fantasmaciano2.visible = false
 	
 #botão bege
 func _on_skinbege_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinbege_mouse_entered() -> void:
-	$Fantasmabege2.visible = true
+	$MultiplayerUI/Fantasmabege2.visible = true
 func _on_skinbege_mouse_exited() -> void:
-	$Fantasmabege2.visible = false
+	$MultiplayerUI/Fantasmabege2.visible = false
 
 #botão laranja
 func _on_skinlaranja_pressed() -> void:
 	pass # Replace with function body.
 func _on_skinlaranja_mouse_entered() -> void:
-	$Fantasmalaranja2.visible = true
+	$MultiplayerUI/Fantasmalaranja2.visible = true
 func _on_skinlaranja_mouse_exited() -> void:
-	$Fantasmalaranja2.visible = false
+	$MultiplayerUI/Fantasmalaranja2.visible = false
+
+#botão purple
+func _on_skinpurpura_pressed() -> void:
+	pass
+func _on_skinpurpura_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmapurpura2.visible = true
+func _on_skinpurpura_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmapurpura2.visible = false
+
+#botão rosa
+func _on_skinpink_pressed() -> void:
+	pass 
+func _on_skinpink_mouse_entered() -> void:
+	$"MultiplayerUI/Fantasmarosio2-Cópia".visible = true
+func _on_skinpink_mouse_exited() -> void:
+	$"MultiplayerUI/Fantasmarosio2-Cópia".visible = false
+	
+#botão roxo
+func _on_skinroxo_pressed() -> void:
+	pass 
+func _on_skinroxo_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmaroxo2.visible = true
+func _on_skinroxo_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmaroxo2.visible = false
+	
+#botão roxo claro
+func _on_skinroxoclaro_pressed() -> void:
+	pass
+func _on_skinroxoclaro_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmaroxoclaro2.visible = true
+func _on_skinroxoclaro_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmaroxoclaro2.visible = false
+	
+#botão verde mato
+func _on_skinverdemato_pressed() -> void:
+	pass 
+func _on_skinverdemato_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmaverdemato2.visible = true
+func _on_skinverdemato_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmaverdemato2.visible = false
+	
+#botão vermelho alaranjado
+func _on_skinvermelhoalaranjado_pressed() -> void:
+	pass
+func _on_skinvermelhoalaranjado_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmavermelhoescuro2.visible = true
+func _on_skinvermelhoalaranjado_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmavermelhoescuro2.visible = false
+	
+#botão azul claro
+func _on_skinazulclaro_pressed() -> void:
+	pass 
+func _on_skinazulclaro_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmaazulclaro.visible = true
+func _on_skinazulclaro_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmaazulclaro.visible = false
+
+#botão all
+func _on_all_mouse_entered() -> void:
+	$MultiplayerUI/Fantasmaazulclaro.visible = true
+	$MultiplayerUI/Fantasmavermelhoescuro2.visible = true
+	$MultiplayerUI/Fantasmaverdemato2.visible = true
+	$MultiplayerUI/Fantasmaroxoclaro2.visible = true
+
+func _on_all_mouse_exited() -> void:
+	$MultiplayerUI/Fantasmaazulclaro.visible = false
+	$MultiplayerUI/Fantasmavermelhoescuro2.visible = false
+	$MultiplayerUI/Fantasmaverdemato2.visible = false
+	$MultiplayerUI/Fantasmaroxoclaro2.visible = false
