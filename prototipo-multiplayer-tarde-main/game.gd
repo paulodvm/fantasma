@@ -7,18 +7,20 @@ const PORT =  3333
 @onready var ui = $MultiplayerUI
 @onready var campoNick = $MultiplayerUI/Panel/CampoNick
 @export var jogador_scene : PackedScene
+@onready var player : Node2D = $"/root/Player"
 var jogadores_nome = {}
+var selected_skin : String = ""
+@onready var start_button : Button = $MultiplayerUI/Panel/BotaoHost 
+@onready var join_button : Button = $MultiplayerUI/Panel/BotaoJoin
 
-
-#Exibir mensagem quando o servidor for criado e exibir mensagens sempre que
-#um usuário se conectar
-#Esconder menu de Multiplayer ao se conectar ou criar servidor com sucesso
-
-#Na função de join, identificar se o jogador conseguiu se conectar. Se não conseguir
-#exibir no log "Falha ao conectar ao servidor"
+func _ready() -> void:
+	start_button.disabled = true
+	join_button.disabled = true
+	
+	
 func _on_botao_join_pressed() -> void:
 	var resultado = peer.create_client(ADDRESS, PORT)
-	
+	$TileMapLayer.visible = true
 	if resultado == OK:
 		multiplayer.multiplayer_peer = peer
 		multiplayer.connected_to_server.connect(sinal_criar_jogador)
@@ -30,7 +32,8 @@ func _on_botao_join_pressed() -> void:
 
 func _on_botao_host_pressed() -> void:
 	var resultado = peer.create_server(PORT)
-	
+	$TileMapLayer.visible = true
+
 	if resultado == OK:
 		multiplayer.multiplayer_peer = peer
 		multiplayer.peer_connected.connect(player_conectado)
@@ -41,7 +44,7 @@ func _on_botao_host_pressed() -> void:
 	
 	else:
 		log.text += "Erro ao criar servidor! Código do erro: "+str(resultado) +"\n"
-		
+	
 #Na função player_conectado realizar uma chamada rpc, para a função atualizar_log
 #Deve rodar o adicionar_jogador
 #Colocar um label no player para exibir o seu número de id
@@ -54,6 +57,7 @@ func player_conectado(id_jogador):
 	rpc("atualizar_log", log.text)
 	
 @rpc("any_peer","call_local","reliable")
+
 func adicionar_jogador(id_jogador, nick_jogador):
 	if multiplayer.is_server():
 		var novo_jogador = jogador_scene.instantiate()
@@ -62,7 +66,6 @@ func adicionar_jogador(id_jogador, nick_jogador):
 		add_child(novo_jogador)
 		jogadores_nome[id_jogador] = nick_jogador
 		rpc_id(id_jogador,"atualizar_nomes", jogadores_nome)
-		
 		
 @rpc("any_peer", "call_local", "reliable")
 func atualizar_nomes(jogadores):
@@ -79,12 +82,11 @@ func atualizar_log(novo_log):
 	log.text = novo_log
 
 # Referência ao jogador (se já tiver um script de jogador, use o que já está configurado)
-var player : Node = null
-
+#var player : Node = null
 
 #botão amarelo
 func _on_skinamarela_pressed() -> void:
-	pass # Replace with function body.
+	pass
 func _on_skinamarela_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaamarelo2.visible = true
 func _on_skinamarela_mouse_exited() -> void:
@@ -93,14 +95,17 @@ func _on_skinamarela_mouse_exited() -> void:
 	#botão verde
 func _on_skinverde_pressed() -> void:
 	pass # Replace with function body.
+	
 func _on_skinverde_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaaverdee2.visible = true
 func _on_skinverde_mouse_exited() -> void:
 	$MultiplayerUI/Fantasmaaverdee2.visible = false
 
 #botão azul
-func _on_skinazul_pressed() -> void:
-	pass # Replace with function body.
+func _on_skinblue_button_pressed() -> void:
+	start_button.disabled = false
+	join_button.disabled = false
+	
 func _on_skinazul_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaazul.visible = true
 func _on_skinazul_mouse_exited() -> void:
@@ -200,9 +205,29 @@ func _on_all_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmavermelhoescuro2.visible = true
 	$MultiplayerUI/Fantasmaverdemato2.visible = true
 	$MultiplayerUI/Fantasmaroxoclaro2.visible = true
+	$MultiplayerUI/Fantasmaroxo2.visible = true
+	$"MultiplayerUI/Fantasmarosio2-Cópia".visible = true
+	$MultiplayerUI/Fantasmapurpura2.visible = true
+	$MultiplayerUI/Fantasmalaranja2.visible = true
+	$MultiplayerUI/Fantasmabege2.visible = true
+	$MultiplayerUI/Fantasmaciano2.visible = true
+	$MultiplayerUI/Fantasmavermelho2.visible = true
+	$MultiplayerUI/Fantasmaazul.visible = true
+	$MultiplayerUI/Fantasmaaverdee2.visible = true
+	$MultiplayerUI/Fantasmaamarelo2.visible = true
 
 func _on_all_mouse_exited() -> void:
 	$MultiplayerUI/Fantasmaazulclaro.visible = false
 	$MultiplayerUI/Fantasmavermelhoescuro2.visible = false
 	$MultiplayerUI/Fantasmaverdemato2.visible = false
 	$MultiplayerUI/Fantasmaroxoclaro2.visible = false
+	$MultiplayerUI/Fantasmaroxo2.visible = false
+	$"MultiplayerUI/Fantasmarosio2-Cópia".visible = false
+	$MultiplayerUI/Fantasmapurpura2.visible = false
+	$MultiplayerUI/Fantasmalaranja2.visible = false
+	$MultiplayerUI/Fantasmabege2.visible = false
+	$MultiplayerUI/Fantasmaciano2.visible = false
+	$MultiplayerUI/Fantasmavermelho2.visible = false
+	$MultiplayerUI/Fantasmaazul.visible = false
+	$MultiplayerUI/Fantasmaaverdee2.visible = false
+	$MultiplayerUI/Fantasmaamarelo2.visible = false

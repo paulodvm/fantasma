@@ -13,6 +13,7 @@ func _ready() -> void:
 	if (is_multiplayer_authority()):
 		var camera = Camera2D.new()
 		add_child(camera)
+		camera.zoom = Vector2(3.5, 3.5)
 	
 func mudar_nome(novo_nome):
 	nome_jogador = novo_nome

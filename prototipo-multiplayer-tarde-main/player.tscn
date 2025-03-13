@@ -1,9 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://ipb0od4ne7au"]
+[gd_scene load_steps=21 format=3 uid="uid://ipb0od4ne7au"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_03w44"]
-[ext_resource type="Texture2D" uid="uid://ca8o5bmom4a08" path="res://icon.svg" id="1_urh02"]
+[ext_resource type="Texture2D" uid="uid://bur0v2k0hqeg2" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasma1.png" id="2_oaw1v"]
 [ext_resource type="Texture2D" uid="uid://c5qxxvyfsco5p" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaamarelo.png" id="2_thq7r"]
+[ext_resource type="Texture2D" uid="uid://dm5uxudprb11l" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasma2.png" id="3_jdim6"]
 [ext_resource type="Texture2D" uid="uid://clwn3pn6i0825" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaamarelo2.png" id="3_oanm8"]
+[ext_resource type="Texture2D" uid="uid://dlh3d4vy1a2oq" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaciano.png" id="4_3ekm8"]
+[ext_resource type="Texture2D" uid="uid://swnnol27lw4l" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaciano2.png" id="5_ub4fh"]
+[ext_resource type="Texture2D" uid="uid://d5j6e54knvo2" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmacinza.png" id="6_sjccp"]
+[ext_resource type="Texture2D" uid="uid://bt3wilnumsdl8" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmacinza2.png" id="7_nxjth"]
+[ext_resource type="Texture2D" uid="uid://b0sco0usirn2w" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmalaranja.png" id="8_qvv1t"]
+[ext_resource type="Texture2D" uid="uid://bfo44pj8cmq3o" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmarosio.png" id="9_wdjd0"]
+[ext_resource type="Texture2D" uid="uid://bpok3ftkeb2q4" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmarosio2 - cópia.png" id="10_kpiv4"]
+[ext_resource type="Texture2D" uid="uid://bi826arpgaeix" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmapurpura.png" id="11_1tt4c"]
+[ext_resource type="Texture2D" uid="uid://chnslp3447y1p" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmapurpura2.png" id="12_6u3ch"]
+[ext_resource type="Texture2D" uid="uid://cbact1gnti7py" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxo.png" id="13_ei56p"]
+[ext_resource type="Texture2D" uid="uid://bpgp73iecha2j" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxo2.png" id="14_8rai2"]
+[ext_resource type="Texture2D" uid="uid://idt6yhg5ct6n" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxoclaro.png" id="17_6bgto"]
+[ext_resource type="Texture2D" uid="uid://c20x2bi1qcru6" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxoclaro2.png" id="18_ipjc0"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sv5xc"]
 properties/0/path = NodePath(".:position")
@@ -23,10 +37,87 @@ properties/3/replication_mode = 1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_thq7r")
+"texture": ExtResource("2_oaw1v")
 }, {
 "duration": 1.0,
+"texture": ExtResource("3_jdim6")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3ekm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ub4fh")
+}],
+"loop": true,
+"name": &"Ciano",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sjccp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nxjth")
+}],
+"loop": true,
+"name": &"Cinza",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1tt4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6u3ch")
+}],
+"loop": true,
+"name": &"Magenta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qvv1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qvv1t")
+}],
+"loop": true,
+"name": &"Orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wdjd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kpiv4")
+}],
+"loop": true,
+"name": &"Pink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ei56p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8rai2")
+}],
+"loop": true,
+"name": &"Purple_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_oanm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_thq7r")
 }],
 "loop": true,
 "name": &"Yellow",
@@ -34,30 +125,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_urh02")
+"texture": ExtResource("17_6bgto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ipjc0")
 }],
 "loop": true,
-"name": &"verde",
+"name": &"cinza rosado",
 "speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(27, 10)
 script = ExtResource("1_03w44")
 
 [node name="NomeJogador" type="Label" parent="."]
-offset_left = 1.0
-offset_top = -27.0
-offset_right = 129.0
-offset_bottom = 12.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -5.0
+offset_right = 72.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 horizontal_alignment = 1
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_sv5xc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(65, 66)
+position = Vector2(0, 10)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_g1u1k")
-animation = &"Yellow"
-autoplay = "verde"
-frame = 1
-frame_progress = 0.294107
+animation = &"Blue"
