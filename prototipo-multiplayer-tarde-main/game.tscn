@@ -383,7 +383,7 @@ offset_left = 306.0
 offset_top = 407.0
 offset_right = 365.0
 offset_bottom = 438.0
-text = "Purple"
+text = "magenta"
 
 [node name="Fantasmapurpura2" type="Sprite2D" parent="MultiplayerUI"]
 visible = false
@@ -392,9 +392,9 @@ texture = ExtResource("10_bfepe")
 
 [node name="skinpink" type="Button" parent="MultiplayerUI"]
 layout_mode = 0
-offset_left = 409.0
+offset_left = 413.0
 offset_top = 407.0
-offset_right = 468.0
+offset_right = 472.0
 offset_bottom = 438.0
 text = "Pink"
 

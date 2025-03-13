@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ipb0od4ne7au"]
+[gd_scene load_steps=25 format=3 uid="uid://ipb0od4ne7au"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_03w44"]
 [ext_resource type="Texture2D" uid="uid://bur0v2k0hqeg2" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasma1.png" id="2_oaw1v"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://bpgp73iecha2j" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxo2.png" id="14_8rai2"]
 [ext_resource type="Texture2D" uid="uid://idt6yhg5ct6n" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxoclaro.png" id="17_6bgto"]
 [ext_resource type="Texture2D" uid="uid://c20x2bi1qcru6" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaroxoclaro2.png" id="18_ipjc0"]
+[ext_resource type="Texture2D" uid="uid://whrn25wwrtu2" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaverde.png" id="19_y5uwk"]
+[ext_resource type="Texture2D" uid="uid://ec42ljndxqyd" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaaverdee2.png" id="20_fr11p"]
+[ext_resource type="Texture2D" uid="uid://cdyj5qjqbwa7" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaverdemato.png" id="21_0am82"]
+[ext_resource type="Texture2D" uid="uid://cykbwck4i5bii" path="res://SpritesJogoFantasma 2/fastamas_com_sprit/Fantasmaverdemato2.png" id="22_vx5wf"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sv5xc"]
 properties/0/path = NodePath(".:position")
@@ -133,6 +137,33 @@ animations = [{
 "loop": true,
 "name": &"cinza rosado",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_y5uwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fr11p")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_0am82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vx5wf")
+}],
+"loop": true,
+"name": &"verde musgo",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -161,4 +192,5 @@ replication_config = SubResource("SceneReplicationConfig_sv5xc")
 position = Vector2(0, 10)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_g1u1k")
-animation = &"Blue"
+animation = &"cinza rosado"
+autoplay = "cinza rosado"

@@ -4,6 +4,9 @@ const SPEED = 300.0
 @onready var rotulo_nome = $NomeJogador
 var nome_jogador = "Anônimo"
 var cor_jogador = ""
+var direction = 1
+@onready var anim = $AnimatedSprite2D
+
 func _enter_tree() -> void:
 
 	set_multiplayer_authority(name.to_int())
@@ -45,10 +48,16 @@ func _physics_process(delta: float) -> void:
 		var direction_horizontal := Input.get_axis("ui_left", "ui_right")
 		if direction_horizontal:
 			velocity.x = direction_horizontal * SPEED
+			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-		
+			
+		if direction > 0:
+			position.x += SPEED * delta
+			anim.flip_h = false
+		elif direction < 0:
+			position.x -= SPEED * delta
+			anim.flip_h = true
 		var direction_vertical := Input.get_axis("ui_up", "ui_down")
 		if direction_vertical:
 			velocity.y = direction_vertical * SPEED

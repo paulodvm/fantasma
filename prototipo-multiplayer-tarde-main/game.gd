@@ -9,9 +9,9 @@ const PORT =  3333
 @export var jogador_scene : PackedScene
 @onready var player : Node2D = $"/root/Player"
 var jogadores_nome = {}
-var selected_skin : String = ""
-@onready var start_button : Button = $MultiplayerUI/Panel/BotaoHost 
-@onready var join_button : Button = $MultiplayerUI/Panel/BotaoJoin
+var selected_skin = 0
+@onready var start_button  = $MultiplayerUI/Panel/BotaoHost 
+@onready var join_button  = $MultiplayerUI/Panel/BotaoJoin
 
 func _ready() -> void:
 	start_button.disabled = true
@@ -86,7 +86,9 @@ func atualizar_log(novo_log):
 
 #botão amarelo
 func _on_skinamarela_pressed() -> void:
-	pass
+	start_button.disabled = false
+	join_button.disabled = false
+	selected_skin = 2
 func _on_skinamarela_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaamarelo2.visible = true
 func _on_skinamarela_mouse_exited() -> void:
@@ -94,8 +96,9 @@ func _on_skinamarela_mouse_exited() -> void:
 	
 	#botão verde
 func _on_skinverde_pressed() -> void:
-	pass # Replace with function body.
-	
+	start_button.disabled = false
+	join_button.disabled = false	
+	$AnimatedSprite2D
 func _on_skinverde_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaaverdee2.visible = true
 func _on_skinverde_mouse_exited() -> void:
@@ -113,7 +116,8 @@ func _on_skinazul_mouse_exited() -> void:
 
 #Botão vermelho
 func _on_skinamarela_5_pressed() -> void:
-	pass # Replace with function body.
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinamarela_5_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmavermelho2.visible = true
 func _on_skinamarela_5_mouse_exited() -> void:
@@ -121,7 +125,8 @@ func _on_skinamarela_5_mouse_exited() -> void:
 
 #botão ciano
 func _on_skinciano_pressed() -> void:
-	pass # Replace with function body.
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinciano_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaciano2.visible = true
 func _on_skinciano_mouse_exited() -> void:
@@ -129,7 +134,8 @@ func _on_skinciano_mouse_exited() -> void:
 	
 #botão bege
 func _on_skinbege_pressed() -> void:
-	pass # Replace with function body.
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinbege_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmabege2.visible = true
 func _on_skinbege_mouse_exited() -> void:
@@ -137,7 +143,8 @@ func _on_skinbege_mouse_exited() -> void:
 
 #botão laranja
 func _on_skinlaranja_pressed() -> void:
-	pass # Replace with function body.
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinlaranja_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmalaranja2.visible = true
 func _on_skinlaranja_mouse_exited() -> void:
@@ -145,7 +152,8 @@ func _on_skinlaranja_mouse_exited() -> void:
 
 #botão purple
 func _on_skinpurpura_pressed() -> void:
-	pass
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinpurpura_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmapurpura2.visible = true
 func _on_skinpurpura_mouse_exited() -> void:
@@ -153,7 +161,8 @@ func _on_skinpurpura_mouse_exited() -> void:
 
 #botão rosa
 func _on_skinpink_pressed() -> void:
-	pass 
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinpink_mouse_entered() -> void:
 	$"MultiplayerUI/Fantasmarosio2-Cópia".visible = true
 func _on_skinpink_mouse_exited() -> void:
@@ -161,7 +170,8 @@ func _on_skinpink_mouse_exited() -> void:
 	
 #botão roxo
 func _on_skinroxo_pressed() -> void:
-	pass 
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinroxo_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaroxo2.visible = true
 func _on_skinroxo_mouse_exited() -> void:
@@ -169,7 +179,8 @@ func _on_skinroxo_mouse_exited() -> void:
 	
 #botão roxo claro
 func _on_skinroxoclaro_pressed() -> void:
-	pass
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinroxoclaro_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaroxoclaro2.visible = true
 func _on_skinroxoclaro_mouse_exited() -> void:
@@ -177,7 +188,8 @@ func _on_skinroxoclaro_mouse_exited() -> void:
 	
 #botão verde mato
 func _on_skinverdemato_pressed() -> void:
-	pass 
+	start_button.disabled = false
+	join_button.disabled = false 
 func _on_skinverdemato_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaverdemato2.visible = true
 func _on_skinverdemato_mouse_exited() -> void:
@@ -185,7 +197,8 @@ func _on_skinverdemato_mouse_exited() -> void:
 	
 #botão vermelho alaranjado
 func _on_skinvermelhoalaranjado_pressed() -> void:
-	pass
+	start_button.disabled = false
+	join_button.disabled = false
 func _on_skinvermelhoalaranjado_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmavermelhoescuro2.visible = true
 func _on_skinvermelhoalaranjado_mouse_exited() -> void:
@@ -193,7 +206,8 @@ func _on_skinvermelhoalaranjado_mouse_exited() -> void:
 	
 #botão azul claro
 func _on_skinazulclaro_pressed() -> void:
-	pass 
+	start_button.disabled = false
+	join_button.disabled = false 
 func _on_skinazulclaro_mouse_entered() -> void:
 	$MultiplayerUI/Fantasmaazulclaro.visible = true
 func _on_skinazulclaro_mouse_exited() -> void:
